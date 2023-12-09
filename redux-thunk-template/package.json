@@ -1,0 +1,60 @@
+{
+  "name": "redux-thunk-template",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.2.6",
+    "@craco/craco": "^7.1.0",
+    "@reduxjs/toolkit": "^1.8.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.0.1",
+    "@testing-library/user-event": "^14.1.1",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.25",
+    "@types/react": "^18.0.6",
+    "@types/react-dom": "^18.0.2",
+    "@types/react-router-dom": "^5.3.3",
+    "antd": "4.19.0",
+    "assert": "^2.1.0",
+    "axios": "0.25.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "craco-less": "^3.0.1",
+    "process": "^0.11.10",
+    "react": "^18.2.0",
+    "react-app-alias": "^2.2.2",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "5.0.1",
+    "sonner": "^1.2.4",
+    "stream-browserify": "^3.0.0",
+    "typescript": "^4.6.0",
+    "util": "^0.12.5",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

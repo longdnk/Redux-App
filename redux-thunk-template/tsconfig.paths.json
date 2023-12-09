@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@src/*": [
+                "./*"
+            ],
+            "@api": [
+                "api/*"
+            ],
+            "@app": [
+                "app/*"
+            ],
+            "@common/*": [
+                "common/*"
+            ],
+            "@features/*": [
+                "features/*"
+            ],
+            "@helper": [
+                "helper/*"
+            ],
+            "@images/*": [
+                "images/*"
+            ],
+            "@layouts": [
+                "layouts"
+            ],
+            "@routes/*": [
+                "routes/*"
+            ],
+            "@styles/*": [
+                "styles/*"
+            ],
+            "@ultis/*": [
+                "ultis/*"
+            ]
+        }
+    }
+}
