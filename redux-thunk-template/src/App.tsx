@@ -1,25 +1,34 @@
 import './App.css';
-import MainLayout from './MainLayout';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import User from '@features/User/User';
+import PrivateRoute from '@routes/PrivateRoute';
+import PublicRoute from '@routes/PublicRoute';
+import Login from '@features/Login/Login';
+import 'antd/dist/antd.less';
 
 const App: React.FC = () => {
 
     return (
         <div>
-            <MainLayout>
-                <Switch>
-                    <Route path={'/'}>
-                        <User />
-                    </Route>
+            <Switch> 
+                
+                <PrivateRoute path={'/'} exact>
+                    <User />
+                </PrivateRoute>
 
-                    <Route path={'/role'}>
-                    </Route>
+                <PrivateRoute path={'/user'} exact>
+                    <User />
+                </PrivateRoute>
+             
+                <PrivateRoute path={'/role'} exact>
+                    <User />
+                </PrivateRoute>
 
-                    <Route path={'/login'}>
-                    </Route>
-                </Switch>
-            </MainLayout>
+                <PublicRoute path={'/login'} exact>
+                    <Login/>
+                </PublicRoute>
+
+            </Switch>
         </div>
     )
 }

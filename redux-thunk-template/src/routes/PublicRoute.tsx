@@ -1,14 +1,16 @@
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 type RouteType = {
     path: string;
     exact: boolean;
-    component: React.FC;
+    children: string | JSX.Element | JSX.Element[];
 }
 
-const PublicRoute: React.FC<RouteType> = ({ path, exact, component }) => {
+const PublicRoute: React.FC<RouteType> = ({ path, exact, children }) => {
     return (
-        <Route path={path} exact={exact} component={component} />
+        <Route path={path} exact={exact}>
+            {children}
+        </Route>
     );
 }
 

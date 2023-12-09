@@ -1,20 +1,28 @@
+import MainLayout from "@src/MainLayout";
+import { checkAuth } from "@helper";
 import { Redirect, Route } from "react-router-dom";
 
 type RouteType = {
+    path: string;
+    exact: boolean;
     children: string | JSX.Element | JSX.Element[];
 }
 
-const PrivateRoute: React.FC<RouteType> = ({ children }) => {
+const PrivateRoute: React.FC<RouteType> = ({ children, path, exact }) => {
 
-    const isAuthenticated = false;
+    const isAuthenticated = checkAuth();
 
     return (
-        <Route
-            render={
-                ({ location }) => isAuthenticated ? children :
-                    <Redirect to={{ pathname: '/login', state: { from: location } }} />
-            }
-        />
+        <MainLayout>
+            <Route
+                path={path}
+                exact={exact}
+                render={
+                    ({ location }) => isAuthenticated ? children :
+                        <Redirect to={{ pathname: '/login', state: { from: location } }} />
+                }
+            />
+        </MainLayout>
     );
 }
 
