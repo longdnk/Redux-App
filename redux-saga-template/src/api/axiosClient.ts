@@ -1,4 +1,6 @@
 import axios from "axios";
+import { appApi } from "@src/api/api";
+import { applyToken } from "@helper";
 
 export const axiosClient = axios.create({
     baseURL: 'https://api.escuelajs.co/api/v1/',
@@ -14,6 +16,7 @@ export const axiosClient = axios.create({
 // Add a request interceptor
 axiosClient.interceptors.request.use(config => {
     // Do something before request is sent
+    config.headers = applyToken();
     return config;
 }, error => {
     // Do something with request error

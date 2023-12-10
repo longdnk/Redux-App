@@ -18,7 +18,7 @@ const App: React.FC = () => {
                 </PrivateRoute>
 
                 <PrivateRoute path={'/user'} exact>
-                    {/*<User/>*/}
+                    <User/>
                 </PrivateRoute>
 
                 {/*<PrivateRoute path={'/role'} exact>*/}

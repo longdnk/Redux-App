@@ -16,6 +16,7 @@ function* loginSaga(action: LoginAction) {
         yield delay(1000);
         const response: AxiosResponse = yield call(login, action.payload.data);
         yield put(loginSuccess(response.data));
+        console.log(response.data)
         const result = response.data as LoginSuccessPayload;
         yield call(setToken, {
             name: action.payload.data.email,
