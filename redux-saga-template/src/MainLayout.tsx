@@ -36,7 +36,7 @@ const MainLayout: React.FC<Props> = props => {
             <Layout>
                 <Header style={{ padding: 10 }}>
                     <Avatar style={{ float: 'right' }} src={<Image src={imageProfile ?? ''}/>}/>
-                    <Avatar style={{ float: 'right', marginRight: 30, minWidth: 100 }} src={nameComponent}/>
+                    <Avatar style={{ float: 'right', marginRight: 30, minWidth: 200 }} src={nameComponent}/>
                     <Title style={{ color: 'white' }} level={3}>ANTD</Title>
                 </Header>
                 <Layout>

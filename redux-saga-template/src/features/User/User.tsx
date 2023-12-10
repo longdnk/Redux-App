@@ -3,8 +3,12 @@ import { Button, Card, Space } from "antd";
 import { Content } from "antd/lib/layout/layout";
 import React, { useState } from "react";
 import * as SubComponent from './SubComponents';
+import { useAppDispatch } from "@app/hooks";
+import { detailUserRequest } from "@features/User/redux/actions";
 
 const User: React.FC = () => {
+
+    const dispatch = useAppDispatch();
 
     const [open, setOpen] = useState<boolean>(false);
 
@@ -16,6 +20,7 @@ const User: React.FC = () => {
 
     const openForm = (event: React.MouseEvent<HTMLButtonElement>) => {
         if (event.currentTarget.name === 'Edit') {
+            dispatch(detailUserRequest(event.currentTarget.value));
         }
         setType(event.currentTarget.name);
         showDrawer();
