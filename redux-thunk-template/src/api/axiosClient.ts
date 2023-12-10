@@ -1,4 +1,5 @@
 import axios from "axios";
+import { applyToken } from "@helper";
 
 export const axiosClient = axios.create({
     baseURL: 'https://dummyjson.com/',
@@ -13,6 +14,7 @@ export const axiosClient = axios.create({
 
 // Add a request interceptor
 axiosClient.interceptors.request.use(config => {
+    config.headers = applyToken();
     // Do something before request is sent
     return config;
 }, error => {

@@ -43,7 +43,15 @@ const UserForm: React.FC<FormProps> = props => {
     }
 
     const closeForm = () => {
-        resetForm();
+        form.setFieldsValue({
+            username: '',
+            firstName: '',
+            lastName: '',
+            password: '',
+            email: '',
+            phone: '',
+            gender: 'male',
+        });
         props.onClose();
     }
 
@@ -67,6 +75,7 @@ const UserForm: React.FC<FormProps> = props => {
             onClose={closeForm}
             visible={props.visible}
             width={props.width}
+            forceRender={true}
         >
             <Form
                 labelCol={{ span: 5 }}
@@ -74,7 +83,7 @@ const UserForm: React.FC<FormProps> = props => {
                 labelAlign={'left'}
                 form={form}
                 onFinish={handleSubmit}
-                initialValues={{
+                initialValues={isEdit ? detailData : {
                     gender: 'male',
                 }}
             >

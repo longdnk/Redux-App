@@ -1,9 +1,7 @@
 import { Layout, Avatar, Menu, Image } from 'antd';
-import { UserOutlined } from '@ant-design/icons'
 import Title from 'antd/lib/typography/Title';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
-import { clearToken, loadImage, loadUser } from '@helper';
-import { useEffect } from "react";
+import { clearToken, loadImage } from '@helper';
 
 const { Header, Footer, Sider } = Layout;
 
@@ -31,15 +29,6 @@ const MainLayout: React.FC<Props> = props => {
 
     const nameComponent = <h3><>{name}</>
     </h3>
-
-    useEffect(() => {
-        if (pathname === '/user' || pathname === '/') {
-            push('/user');
-        }
-        else {
-            push(pathname);
-        }
-    }, [pathname, push]);
 
     return (
         <div className="App">

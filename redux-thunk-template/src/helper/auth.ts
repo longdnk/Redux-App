@@ -32,3 +32,24 @@ export const loadImage = () => {
 export const loadUser = () => {
     return localStorage.getItem('userName');
 }
+
+export const applyToken = () => {
+    let headers = {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+        Acceptable: 'application/json',
+        Authorization: '',
+    }
+
+    const isAuth = checkAuth();
+
+    const token = getToken();
+
+    if (isAuth) {
+        headers = {
+            ...headers,
+            Authorization: `Bearer ${token}`,
+        }
+    }
+    return headers;
+}

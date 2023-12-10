@@ -1,6 +1,7 @@
 import MainLayout from "@src/MainLayout";
 import { checkAuth } from "@helper";
 import { Redirect, Route } from "react-router-dom";
+import React from "react";
 
 type RouteType = {
     path: string;

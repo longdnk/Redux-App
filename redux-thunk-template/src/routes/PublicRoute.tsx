@@ -1,4 +1,5 @@
 import { Route } from "react-router-dom";
+import React from "react";
 
 type RouteType = {
     path: string;
