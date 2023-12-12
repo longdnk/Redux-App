@@ -97,6 +97,10 @@
 	width: 150px !important;
 }
 
+.ant-spin-nested-loading > div > .ant-spin {
+	min-height: 500px;
+}
+
 /*.ant-input-number {*/
 /*	width: 200px !important;*/
 /*}*/

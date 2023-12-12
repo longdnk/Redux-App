@@ -29,12 +29,12 @@ const Category: React.FC = () => {
 	return (
 		<Content className={'content-top'}>
 			<div className={'content-sub'}>
-				<p>Product</p>
+				<p>Category</p>
 			</div>
 			<div className={'content-style'}>
 				<Card
 					className={'card-style'}
-					title="Product Table"
+					title="Category Table"
 					extra={
 						<Space>
 							<Button
