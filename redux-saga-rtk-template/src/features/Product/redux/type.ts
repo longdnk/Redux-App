@@ -38,6 +38,17 @@ export type Product = {
 	}
 }
 
+export type ProductFetchPayload = {
+	price_min?: number;
+	price_max?: number;
+	categoryId?: number;
+}
+
+export type ProductFetch = {
+	payload: ProductFetchPayload;
+	type: string;
+}
+
 export type ProductAddPayload = {
 	data: Omit<Product, 'id'>;
 	callback: () => void;

@@ -2,8 +2,8 @@ import { appApi, axiosClient } from "@api";
 import { Product } from "./type";
 
 export const productApi = {
-	get: async (url: string) => {
-		return await appApi.get(url);
+	get: async (url: string, params?: object) => {
+		return await appApi.get(url, { params });
 	},
 	post: async (url: string, data: Omit<Product, 'id'>) => {
 		return await appApi.post(url, data);

@@ -92,3 +92,11 @@
 .card-style {
 	width: 100%;
 }
+
+.input-filter {
+	width: 150px !important;
+}
+
+/*.ant-input-number {*/
+/*	width: 200px !important;*/
+/*}*/

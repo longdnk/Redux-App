@@ -1,4 +1,13 @@
-import { Product, ProductAddPayload, ProductDelete, ProductDeletePayload, ProductEdit, ProductEditPayload, ProductState } from "./type";
+import {
+	Product,
+	ProductAddPayload,
+	ProductDelete,
+	ProductDeletePayload,
+	ProductEdit,
+	ProductEditPayload,
+	ProductFetchPayload,
+	ProductState
+} from "./type";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { PayloadError, pushNotification } from "@helper";
 
@@ -29,7 +38,7 @@ const productSlice = createSlice({
 	name: 'product',
 	initialState,
 	reducers: {
-		getProductRequest: state => {
+		getProductRequest: (state, action: PayloadAction<ProductFetchPayload>) => {
 			state.list.loading = true;
 		},
 		getProductSuccess: (state, action: PayloadAction<Product[]>) => {

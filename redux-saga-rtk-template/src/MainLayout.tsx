@@ -21,7 +21,7 @@ const MainLayout: React.FC<Props> = props => {
 
 	const { push } = useHistory();
 
-	const defaultKey = (pathname === '/product' || pathname === '/') ? 'Product' : 'Role';
+	const defaultKey = (pathname === '/product' || pathname === '/') ? 'Product' : 'Category';
 
 	const handleLogout = () => {
 		clearToken();
@@ -56,9 +56,9 @@ const MainLayout: React.FC<Props> = props => {
 								</NavLink>
 							</Menu.Item>
 
-							<Menu.Item key='Role'>
-								<NavLink to={'/role'}>
-									Role
+							<Menu.Item key='Category'>
+								<NavLink to={'/category'}>
+									Category
 								</NavLink>
 							</Menu.Item>
 

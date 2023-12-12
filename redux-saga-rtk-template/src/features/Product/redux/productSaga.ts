@@ -16,13 +16,13 @@ import {
 	getProductRequest,
 	getProductSuccess
 } from "./productSlice";
-import { DetailProduct, ProductAdd, ProductDelete, ProductEdit } from "./type";
+import { DetailProduct, ProductAdd, ProductDelete, ProductEdit, ProductFetch } from "./type";
 import { appApi } from "@api";
 
-function* getProduct() {
+function* getProduct(action: ProductFetch) {
 	try {
 		yield delay(1000);
-		const response: AxiosResponse = yield call(productApi.get, 'products');
+		const response: AxiosResponse = yield call(productApi.get, 'products', action.payload);
 		yield put(getProductSuccess(response.data));
 	} catch (e: any) {
 		yield put(getProductError(e));

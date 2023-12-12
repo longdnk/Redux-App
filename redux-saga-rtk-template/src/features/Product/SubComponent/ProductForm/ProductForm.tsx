@@ -1,10 +1,10 @@
 import { Button, Drawer, DrawerProps, Form, Input, InputNumber, Select, Space, Spin } from "antd"
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { CloseCircleFilled, PlusCircleFilled, ReloadOutlined } from "@ant-design/icons";
 import { useAppDispatch, useAppSelector } from "@app/hooks";
 import { Product } from "@features/Product/redux/type";
 import { addProductRequest, editProductRequest, getProductRequest } from "@features/Product/redux/productSlice";
-import { pushNotification } from "@helper";
+import { format, pushNotification } from "@helper";
 
 type FormProps = DrawerProps & {
 	onClose: () => void;
@@ -12,8 +12,6 @@ type FormProps = DrawerProps & {
 }
 
 const UserForm: React.FC<FormProps> = props => {
-
-	const [index, setIndex] = useState<number>(-1);
 
 	const dispatch = useAppDispatch();
 
@@ -87,7 +85,7 @@ const UserForm: React.FC<FormProps> = props => {
 
 	const callback = () => {
 		closeForm();
-		dispatch(getProductRequest());
+		dispatch(getProductRequest({}));
 	}
 
 	useEffect(() => {
@@ -113,9 +111,6 @@ const UserForm: React.FC<FormProps> = props => {
 				labelAlign={'left'}
 				form={form}
 				onFinish={handleSubmit}
-				// initialValues={isEdit ? detailData : {
-				// 	role: 'customer'
-				// }}
 			>
 				<Spin spinning={loading}>
 					<Form.Item
@@ -131,7 +126,10 @@ const UserForm: React.FC<FormProps> = props => {
 						name={'price'}
 						rules={[{ required: true, message: 'Input price' }]}
 					>
-						<InputNumber style={{ width: '100%' }}/>
+						<InputNumber
+							style={{ width: '100%' }}
+							formatter={value => format(Number(value))}
+						/>
 					</Form.Item>
 
 					<Form.Item

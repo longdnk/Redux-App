@@ -26,7 +26,7 @@ const DeleteModal: React.FC<Props> = props => {
 
 	const callback = () => {
 		handleCancel();
-		dispatch(getProductRequest());
+		dispatch(getProductRequest({}));
 	}
 
 	const handleCancel = () => {

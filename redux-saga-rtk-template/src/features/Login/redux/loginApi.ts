@@ -1,5 +1,5 @@
 import { appApi } from "@api";
-import { LoginData } from "@features/Login/redux/type";
+import { LoginData } from "./type";
 
 export const loginApi = {
 	login: async (data: LoginData) => {

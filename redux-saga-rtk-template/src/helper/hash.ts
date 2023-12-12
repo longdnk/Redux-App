@@ -26,3 +26,6 @@ export const hash = (item: string | number) => {
 	hash = hash < 0 ? hash * -1 : hash;
 	return hash.toString().repeat(2);
 }
+export const format = (value: number) => {
+	return `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}
