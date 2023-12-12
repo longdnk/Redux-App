@@ -1,0 +1,83 @@
+/*@import '~antd/dist/antd.css';*/
+
+.ant-layout-sider-children {
+	min-height: 950px;
+}
+
+.btn-edit {
+	border-color: #33b249 !important;
+	background-color: #33b249 !important;
+	color: #fff !important;
+}
+
+.App {
+	text-align: left;
+}
+
+.App-logo {
+	height: 40vmin;
+}
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #09d3ac;
+}
+
+.card-login {
+	border: 1px solid black;
+	max-width: 800px;
+	min-width: 500px;
+}
+
+.card-login-layout {
+	background-image: url(images/login.jpg);
+	background-size: contain;
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	height: 900px;
+	max-height: 900px;
+	min-height: 300px;
+}
+
+.form-input {
+	border: 1px solid black;
+	font-weight: 600;
+}
+
+.ant-input {
+	font-weight: 600;
+}
+
+.header-avatar-custom {
+	float: right;
+}
+
+.header-avatar-custom-mail {
+	float: right;
+	margin-right: 30px;
+	min-width: 200px;
+}
+
+.title-custom {
+	color: white;
+}
+
+.content-top {
+	padding: 0 50px;
+}
+
+.content-sub {
+	padding: 16px 0;
+}
