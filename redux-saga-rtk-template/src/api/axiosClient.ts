@@ -1,5 +1,4 @@
 import axios from "axios";
-import { appApi } from "@src/api/api";
 import { applyToken } from "@helper";
 
 export const axiosClient = axios.create({
