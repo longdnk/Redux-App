@@ -24,7 +24,8 @@ function* getProduct(action: ProductFetch) {
 		yield delay(1000);
 		const response: AxiosResponse = yield call(productApi.get, 'products', action.payload);
 		yield put(getProductSuccess(response.data));
-	} catch (e: any) {
+	}
+	catch (e: any) {
 		yield put(getProductError(e));
 	}
 }
@@ -35,7 +36,8 @@ function* addProduct(action: ProductAdd) {
 		yield call(productApi.post, 'products', action.payload.data);
 		yield put(addProductSuccess());
 		yield call(action.payload.callback);
-	} catch (e: any) {
+	}
+	catch (e: any) {
 		yield put(addProductError(e));
 	}
 }
@@ -45,7 +47,8 @@ function* detailProduct(action: DetailProduct) {
 		yield delay(1000);
 		const response: AxiosResponse = yield call(appApi.get, `products/${action.payload}`);
 		yield put(detailProductSuccess(response.data));
-	} catch (e: any) {
+	}
+	catch (e: any) {
 		yield put(detailProductError(e));
 	}
 }
@@ -56,7 +59,8 @@ function* editProduct(action: ProductEdit) {
 		yield call(appApi.put, `products/${action.payload.id}`, action.payload.data);
 		yield put(editProductSuccess());
 		yield call(action.payload.callback);
-	} catch (e: any) {
+	}
+	catch (e: any) {
 		yield put(editProductError(e));
 	}
 }
@@ -67,7 +71,8 @@ function* deleteProduct(action: ProductDelete) {
 		yield call(appApi.delete, `products/${action.payload.id}`);
 		yield put(deleteProductSuccess());
 		yield call(action.payload.callback);
-	} catch (e: any) {
+	}
+	catch (e: any) {
 		yield put(deleteProductError(e));
 	}
 }

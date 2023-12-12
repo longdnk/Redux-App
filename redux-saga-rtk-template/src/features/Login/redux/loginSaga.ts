@@ -14,7 +14,8 @@ function* login(action: LoginAction) {
 			id: action.payload.data.password,
 		}));
 		yield call(action.payload.callback);
-	} catch (e: any) {
+	}
+	catch (e: any) {
 		yield put(loginError(e));
 	}
 }

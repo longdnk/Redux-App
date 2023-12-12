@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Input, InputNumber, Select, Space, Table } from "antd";
+import { Button, InputNumber, Select, Space, Table } from "antd";
 import { ColumnsType } from "antd/es/table";
 import { EditFilled, FilterFilled, ReloadOutlined } from "@ant-design/icons";
 import { useAppDispatch, useAppSelector } from "@app/hooks";

@@ -5,6 +5,7 @@ import 'antd/dist/antd.less';
 import React from "react";
 import { Product } from "@features/Product";
 import { Login } from "@features/Login";
+import { Category } from "@features/Categories";
 
 const App: React.FC = () => {
 
@@ -18,6 +19,10 @@ const App: React.FC = () => {
 
 				<PrivateRoute path={'/product'} exact>
 					<Product/>
+				</PrivateRoute>
+
+				<PrivateRoute path={'/category'} exact>
+					<Category/>
 				</PrivateRoute>
 
 				<PublicRoute path={'/login'} exact>
